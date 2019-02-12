@@ -1,4 +1,4 @@
-class CompanySerializer < ActiveModel::Serializer
+class UserSerializer < ActiveModel::Serializer
   attributes :id, :givenname, :surname, :email, :token, :hbt_admin,
   :company_admin, :trusted_dev, :linkedin_url, :personal_site_url,
   :twitter_url, :github_url, :blurb, :profile_img_url, :content_recommendations,

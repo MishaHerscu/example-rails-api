@@ -16,7 +16,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :github_url, index: { unique: true }
       t.string :blurb
       t.string :profile_img_url
-      t.integer :current_company_id, index: { unique: true }
+      t.references :company, index: true, foreign_key: true
 
       t.timestamps null: false
     end
