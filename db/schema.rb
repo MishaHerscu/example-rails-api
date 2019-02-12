@@ -80,26 +80,26 @@ ActiveRecord::Schema.define(version: 20190211234104) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",              null: false
-    t.string   "token",              null: false
-    t.string   "password_digest",    null: false
-    t.boolean  "hbt_admin",          null: false
-    t.boolean  "company_admin",      null: false
-    t.boolean  "trusted_dev",        null: false
-    t.string   "givenname",          null: false
-    t.string   "surname",            null: false
+    t.string   "email",             null: false
+    t.string   "token",             null: false
+    t.string   "password_digest",   null: false
+    t.boolean  "hbt_admin"
+    t.boolean  "company_admin"
+    t.boolean  "trusted_dev"
+    t.string   "givenname",         null: false
+    t.string   "surname",           null: false
     t.string   "linkedin_url"
     t.string   "personal_site_url"
     t.string   "twitter_url"
     t.string   "github_url"
     t.string   "blurb"
     t.string   "profile_img_url"
-    t.integer  "current_company_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "company_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
-  add_index "users", ["current_company_id"], name: "index_users_on_current_company_id", unique: true, using: :btree
+  add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["github_url"], name: "index_users_on_github_url", unique: true, using: :btree
   add_index "users", ["linkedin_url"], name: "index_users_on_linkedin_url", unique: true, using: :btree
@@ -114,4 +114,5 @@ ActiveRecord::Schema.define(version: 20190211234104) do
   add_foreign_key "hire_recommendations", "users"
   add_foreign_key "trust_links", "trust_types"
   add_foreign_key "trust_links", "users"
+  add_foreign_key "users", "companies"
 end

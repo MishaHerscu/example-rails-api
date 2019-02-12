@@ -8,7 +8,7 @@ class UsersController < ProtectedController
     user_credentials[:hbt_admin] = false
     user_credentials[:company_admin] = false
     user_credentials[:trusted_dev] = false
-
+    user_credentials[:company_id] = 1
     user = User.create(user_credentials)
     if user.valid?
       render json: user, status: :created
@@ -92,10 +92,10 @@ class UsersController < ProtectedController
   def user_creds
     params.require(:credentials)
           .permit(:email, :password, :password_confirmation, :givenname,
-                  :surname, :hbt_admin, :company_admin, :trusted_dev,
-                  :linkedin_url, :personal_site_url, :twitter_url, :github_url,
-                  :blurb, :profile_img_url, :content_recommendations,
-                  :hire_recommendations, :trust_links, :company)
+                  :surname, :linkedin_url, :personal_site_url, :twitter_url,
+                  :github_url, :blurb, :profile_img_url,
+                  :content_recommendations, :hire_recommendations, :trust_links,
+                  :company_id)
   end
 
   def pw_creds

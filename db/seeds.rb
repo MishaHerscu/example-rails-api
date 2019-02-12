@@ -5,10 +5,23 @@
 # # The data can then be loaded with the rake db:seed (or created alongside the db
 # # with db:setup).
 #
-# # Examples:
-# #
-# #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-# #   Mayor.create(name: 'Emanuel', city: cities.first)
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Company.create([{
+  name: 'defaultCompany',
+  website_url: 'N/A',
+  blog_url: 'N/A',
+  twitter_url: 'N/A',
+  facebook_url: 'N/A',
+  linkedin_url: 'N/A',
+  job_postings_url: 'N/A',
+  why_work_here: 'N/A',
+  max_degrees_separation: 1
+  }])
+
 #
 # #
 # # GET EVENT DATA FROM EVENTFUL
