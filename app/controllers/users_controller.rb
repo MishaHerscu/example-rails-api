@@ -73,15 +73,16 @@ class UsersController < ProtectedController
   end
 
   def update_recommendations
-    user_credentials = user_creds
-    return false if @current_user.email != user_credentials[:email]
-
-    begin
-      refresh_user_events(@current_user)
-      head :no_content
-    rescue
-      render json: ''
-    end
+    p 'TODO: write update_recommendations method'
+    # user_credentials = user_creds
+    # return false if @current_user.email != user_credentials[:email]
+    #
+    # begin
+    #   refresh_user_events(@current_user)
+    #   head :no_content
+    # rescue
+    #   render json: ''
+    # end
   end
 
   private

@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
-  resources :attraction_categories, except: [:new, :edit]
-  resources :categories, except: [:new, :edit]
-  resources :friend_requests, except: [:new, :edit]
-  resources :friendships, except: [:new, :edit, :update]
-  resources :attendances, except: [:new, :edit]
-  resources :trips, except: [:new, :edit]
-  resources :cities, except: [:new, :edit]
-  resources :attraction_suggestions, except: [:new, :edit]
-  resources :user_attractions, except: [:new, :edit]
-  resources :attractions, except: [:new, :edit]
-  resources :examples, except: [:new, :edit]
+  resources :hire_recommendations, except: [:new, :edit]
+  resources :content_recommendations, except: [:new, :edit]
+  resources :trust_links, except: [:new, :edit]
+  resources :trust_types, except: [:new, :edit]
+  resources :companies, except: [:new, :edit]
+  resources :content_posts, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'
   post '/update-recommendations/:id' => 'users#update_recommendations'
